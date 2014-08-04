@@ -1,4 +1,6 @@
-<%= form_for(@idea) do |f| %>
+<%= tinymce %>
+
+<%= form_for(@idea, {:html => {:class => "ls-form row" }}) do |f| %>
   <% if @idea.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
@@ -10,36 +12,40 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :id %><br>
-    <%= f.number_field :id %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
+<BR><BR>
+<fieldset>
+  <div class="ls-label col-md-7">
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  
+  <div class="ls-label">
+    <%= text_area_tag :description, "", :class => "tinymce", :rows => 40, :cols => 120 %>
   </div>
-  <div class="field">
-    <%= f.label :material %><br>
-    <%= f.text_field :material %>
-  </div>
-  <div class="field">
-    <%= f.label :tags %><br>
-    <%= f.text_field :tags %>
-  </div>
-  <div class="field">
-    <%= f.label :font %><br>
-    <%= f.text_field :font %>
-  </div>
-  <div class="field">
-    <%= f.label :public %><br>
-    <%= f.check_box :public %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <div class="ls-form ls-form-horizontal row">
+    <div class="ls-label col-md-5 col-xs-12">
+      <%= f.label :material %>
+      <%= f.text_field :material %>
+    </div>
+    <div class="ls-label col-md-5 col-xs-12">
+      <%= f.label :tags %>
+      <%= f.text_field :tags %>
+    </div>
+    <div class="ls-label col-md-5">
+      <%= f.label :font %>
+      <%= f.text_field :font %>
+    </div>
+    <div class="ls-label col-md-5">
+      <%= f.label :public, :class=>"ls-label-text"%>
+      <%= f.check_box :public %>  
+    </div>
+
+</div>
+  
+
+</fieldset>
+<div class="ls-actions-btn">
+    <%= f.submit "Send",  :class=>"ls-btn" %>
+
 <% end %>

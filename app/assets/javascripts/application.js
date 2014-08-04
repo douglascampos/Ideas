@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require tinymce
+$( document ).ready(function() {
+	$('textarea.tinymce').tinymce({
+	});
+});
