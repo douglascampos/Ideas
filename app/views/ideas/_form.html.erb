@@ -1,4 +1,5 @@
 <%= tinymce %>
+
 <%= form_for(@idea, {:html => {:class => "ls-form row" }}) do |f| %>
   <% if @idea.errors.any? %>
     <div id="error_explanation">
@@ -44,5 +45,7 @@
   
 
 </fieldset>
+  <div class="ls-actions-btn">
+  <%= f.submit "Send",  :class=>"ls-btn-primary" %>
 
 <% end %>

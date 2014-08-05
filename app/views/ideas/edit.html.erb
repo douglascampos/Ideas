@@ -4,6 +4,7 @@
 
 <%= link_to 'Show', @idea, :class=>"ls-btn" %> 
 <%= link_to 'Back', ideas_path, :class=>"ls-btn" %>
+<%= link_to t(:destroy), @idea, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"ls-btn-danger" %>
 
 <!-- END DIV back button -->
 </div>
