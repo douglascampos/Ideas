@@ -1,5 +1,4 @@
 <%= tinymce %>
-
 <%= form_for(@idea, {:html => {:class => "ls-form row" }}) do |f| %>
   <% if @idea.errors.any? %>
     <div id="error_explanation">
@@ -20,7 +19,7 @@
   </div>
   
   <div class="ls-label">
-    <%= text_area_tag :description, "", :class => "tinymce", :rows => 40, :cols => 120 %>
+    <%= f.text_area :description, :class => "tinymce", :rows => 30%>
   </div>
 
   <div class="ls-form ls-form-horizontal row">
@@ -45,7 +44,5 @@
   
 
 </fieldset>
-<div class="ls-actions-btn">
-    <%= f.submit "Send",  :class=>"ls-btn" %>
 
 <% end %>

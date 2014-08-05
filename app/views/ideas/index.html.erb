@@ -1,30 +1,22 @@
 <h1 class="ls-title-intro ls-ico-home">Lista de idéias</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Material</th>
-      <th>Tags</th>
-      <th>Public</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @ideas.each do |idea| %>
-      <tr>        
-        <td><%= idea.name %></td>
-        <td><%= idea.material %></td>
-        <td><%= idea.tags %></td>
-        <td><%= idea.public %></td>
-        <td><%= link_to 'Show', idea %></td>
-        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
-        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+  <% @ideas.each do |idea| %>
+  <div class="ls-list">
+    <header class="ls-list-header">
+      <div class="ls-list-title col-md-4">
+        <p><%= idea.name %></p>
+        <small><%= idea.material %></small>
+      </div>
+      <div class="col-md-3 col-md-offset-5 ls-txt-right">
+        <%= link_to 'Show', idea, :class=>"ls-btn-primary" %>
+      </div>   
+    </header>
+  </div>
+<% end %>
 <br>
 
-<%= link_to 'New Idea', new_idea_path %>
+<div class="ls-actions-btn">
+  <%= link_to 'New Idea', new_idea_path, :class=>"ls-btn" %>
+</div>
+
+
