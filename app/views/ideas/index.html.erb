@@ -1,11 +1,24 @@
-<h1 class="ls-title-intro ls-ico-home">Lista de idéias</h1>
+<h1 class="ls-title-intro ls-ico-lamp">Lista de idéias</h1>
 
   <% @ideas.each do |idea| %>
   <div class="ls-list">
     <header class="ls-list-header">
       <div class="ls-list-title col-md-4">
-        <p><%= idea.name %></p>
-        <small><%= idea.material %></small>
+        <table>
+          <tr>
+            <td>
+              <p><h2><%= idea.name %></h2></p>
+              <small><%= idea.material %></small>
+            </td>
+            <td valign="top"> 
+              <% if idea.public %>
+                <div class="ls-tag-success">public</div>
+              <% else %>
+                <div class="ls-tag-danger">private</div>
+              <% end %>
+            </td>
+          </tr>
+        </table>
       </div>
       <div class="col-md-3 col-md-offset-5 ls-txt-right">
         <%= link_to 'Show', idea, :class=>"ls-btn-primary" %>

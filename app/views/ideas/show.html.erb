@@ -2,16 +2,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="ls-box ls-box-gray">
-  <h5 class="ls-title-2"><%= @idea.name %><% if @idea.public %>
-  <div class="ls-tag-success">
-    PROJETO PUBLICO
-  </div>
-<% else %>
-  <div class="ls-tag-danger">
-    PROJETO PRIVADO
-  </div>
-<% end %>
-</h5>
+  <h5 class="ls-title-2"><%= @idea.name %>
+    <% if @idea.public %>
+      <div class="ls-tag-success">
+        PROJETO PUBLICO
+      </div>
+    <% else %>
+      <div class="ls-tag-danger">
+        PROJETO PRIVADO
+      </div>
+    <% end %>
+  </h5>
 </div>
 
 <div class="ls-box">
